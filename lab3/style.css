@@ -29,6 +29,9 @@
     text-align: end;
     align-items: center;
 }
+.place-order {
+    float:right;
+}
 
 .cart-icon{
     width: 50px;
