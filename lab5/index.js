@@ -1,0 +1,22 @@
+// Create a function using function declaration named sum with one parameter of Array type, the
+// returned result is the sum of all elements which are greater than 20
+
+const sum = (arr) => arr.filter(a => a > 20).reduce((a, b) => a+b);
+
+
+// Create a function using function expression named getNewArray with one parameter of String
+// Array, return a new array which contains all string, length is greater than and equal to 5, and
+// contains letter ‘a’.
+
+const getNewArray = (strArray) => {
+    return strArray.filter((value) => value.length >= 5 && value.includes('a'));
+}
+
+
+//Testing
+const arr = [1,5,30,20,5, 40];
+const strArray = ['bbb', 'ccc', 'avfaa', 'bafdfdc'];
+
+console.log(sum(arr));
+
+console.log(getNewArray(strArray));
