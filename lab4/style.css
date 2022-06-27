@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    background-color: #fafafa;
+}
+
+#nav {
+    display: flex;
+    border-bottom: 1px solid rgb(41, 38, 38);
+    height: 30px;
+    padding: 1px;
+    background: #808c80;
+}
+
+#title {
+    width: 30%;
+}
+
+.display-flex {
+    display: flex;
+}
+
+#left-panel {
+    text-align: start;
+    width: 50%;
+}
+
+#right-panel {
+    text-align: start;
+    width: 50%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#reg-form {
+    margin-top: 8px;
+}
