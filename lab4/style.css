@@ -1,38 +1,137 @@
-body {
-    margin: 0px;
-    background-color: #fafafa;
+
+.page-header{
+    margin-left: 20px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px solid rgb(142, 169, 142); ;
 }
 
-#nav {
+label {
+    font-weight: bold;
+}
+
+.form-message{
+    margin-top: 30px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline; 
+}
+
+.actions-buttons {
     display: flex;
-    border-bottom: 1px solid rgb(41, 38, 38);
+    width: 100%;
+    height: 40px;
+    background-color: rgb(232, 230, 230);
+    align-items: center;
+    justify-content: center;
+}
+
+.actions-buttons button {
+    cursor: pointer;
+    width: 100px;
     height: 30px;
-    padding: 1px;
-    background: #808c80;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgb(142, 169, 142);
+    border: none !important;
+    color: white;
+    font-weight: bold;
 }
 
-#title {
-    width: 30%;
-}
-
-.display-flex {
+.form-content {
     display: flex;
 }
 
-#left-panel {
-    text-align: start;
-    width: 50%;
+.nav {
+    display: flex;
+    background-color: rgb(142, 169, 142);
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
 }
 
-#right-panel {
-    text-align: start;
-    width: 50%;
+.nav select {
+    background-color: rgb(142, 169, 142);
+    border: none !important;
 }
 
-.underline {
+.more-options {
+    margin-left: 50px;
+}
+
+.form-content {
+    flex-direction: column;
+    padding: 10px;
+    height: 617px;
+    flex-wrap: wrap;
+}
+
+.form-input,
+.form-input-special {
+    display: flex;
+    margin-top: 30px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.special-input {
+    display: flex;
+    margin-top: 30px;
+}
+
+.special-input-header {
     text-decoration: underline;
 }
 
-#reg-form {
-    margin-top: 8px;
+.form-input-special {
+    flex-direction: column;
+}
+
+.form-label {
+    width: 50%;
+}
+
+.text-lines {
+    height: 100px;
+}
+
+.form-input textarea,
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 50%;
+}
+
+.form-input select {
+    width: 50%;
+}
+
+.special-input select {
+    width: 50%;
+}
+
+.payment-checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
+.validator{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
 }
