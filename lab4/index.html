@@ -57,26 +57,31 @@
         <div class="form-input">
           <label class="form-label" for="state">State:</label><br />
           <select name="state" id="state">
-            <option value="volvo">- Select -</option>
+            <option value="default">- Select -</option>
+            <option value="iowa">Iowa</option>
+            <option value="newyork">New York</option>
           </select>
         </div>
 
         <div class="form-input">
           <label class="form-label" for="state">Country:</label><br />
           <select name="country" id="country">
-            <option value="volvo">- Select -</option>
+            <option value="default">- Select -</option>
+            <option value="us">United States</option>
+            <option value="bd">Bangladesh</option>
+
           </select>
         </div>
 
         <div class="form-input">
           <label class="form-label required" for="email">Email:</label><br />
-          <input type="email" id="email" name="email" required /><br />
+          <input type="text" id="email" name="email" pattern="[a-z0-9._+\-]+@[a-z0-0.\-]+\.[a-z]{2,3}" required /><br />
         </div>
 
         <div class="form-input">
           <label class="form-label required" for="tel">Phone Number :</label
           ><br />
-          <input type="tel" id="tel" name="tel" required /><br />
+          <input type="text" id="tel" name="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required /><br />
         </div>
 
         <div class="form-input-special">
@@ -84,7 +89,9 @@
           <div class="special-input">
             <label class="form-label" for="meal">Meal Preference:</label><br />
             <select name="meal" id="meal">
-              <option value="volvo">Vegetarian</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="nonVegetarian">Non-Vegetarian</option>
+              <option value="other">Others</option>
             </select>
           </div>
         </div>
