@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab 7</title>
+    <script>
+      function askPassword(ok, fail) {
+        let password = prompt("Password? ", "");
+
+        if (password === "rokstar") ok();
+        else fail();
+      }
+
+      let user = {
+        name: "Jhon",
+
+        loginOk() {
+          alert(`${this.name} is logged in`);
+        },
+        loginFail() {
+          alert(`${this.name} failed to login`);
+        },
+      };
+
+      askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+      askPassword(function() {user.loginOk()}, function(){user.loginFail()});
+      askPassword(() => user.loginOk(), () => user.loginFail());
+    
+
+      //askPassword(user.loginOk, user.loginFail);
+    </script>
+  </head>
+  <body></body>
+</html>
