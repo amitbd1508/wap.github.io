@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6</title>
+   
+  </head>
+  <body>
+    <pre>
+        function makeArmy() {
+
+            let shooters = [];
+            let i = 0;
+            while (i < 2) {
+                let shooter = function () {
+                    console.log(i);
+                }
+                shooters.push(shooter);
+                i++;
+            }
+            return shooters;
+        }
+        let army = makeArmy();
+        
+        army[0](); // 2
+        
+        
+        
+        
+        
+        >> global lexical environment (LE)
+        global EC - creation            
+        LE = {outer: null, makeArmy: fn }    TDZ = army
+        
+        global EC - execution
+        LE = {outer: null, makeArmy: fn, army = [fn, fn]} 
+        
+        
+        >> LE for makeArmy()
+        makeArmy EC - creation
+        LE = {outer: global, arguments: {length: 0}}    TDZ = shooters, i
+        
+        >> After while-loop, changed the condition to while(i < 2) to save time. The LE is being changed as below
+        makeArmy EC - execution
+        LE = {outer: global, arguments: {length: 0}, shooters = [fn, fn], i =2, while0, while1}
+
+
+        >> while0 and while 1
+        while0 EC -creation
+        LE = {outer: makeArmy}    TDZ= shooter
+        
+        while0 EC -execution
+        LE ={outer: makeArmy, shooter = fn}
+        
+        
+        while1 EC -creation
+        LE = {outer: makeArmy}    TDZ= shooter
+        
+        while1 EC -execution
+        LE ={outer: makeArmy, shooter = fn}
+        
+        >> a[0]()
+        fn- closerScope
+        LE={i = 2, outer: makeArmy}
+        a[0]() EC - creation
+        LE={outer: closerScope, arguments={length: 0}}
+        
+        fn- closerScope
+        LE={i = 2, outer: makeArmy}
+        fn EC - creation
+        LE={outer: closerScope, arguments={length: 0}}
+
+
+        >> What will army[0]() alert?
+        Ans : 2
+
+
+        >> Can you fix the code?
+        function makeArmy() {
+            let shooters = [];
+            let i = 0;
+            while (i < 2) {
+              let j = i;
+              let shooter = function () {
+                console.log(j);
+              };
+              shooters.push(shooter);
+              i++;
+            }
+            return shooters;
+          }
+          let army = makeArmy();
+          army.forEach((f) => f());
+
+
+        >> How will the diagram change?
+        closerScope will be different for every iteration it will be for the while block not makeArmy
+        shoters = [
+          function() {alert(j)}, //j =0
+          function() {alert(j)}, //j =1
+          . 
+          . 
+          function() {alert(j)} //j =n
+
+         ]
+
+    </pre>
+  </body>
+</html>
