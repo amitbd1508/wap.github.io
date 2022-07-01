@@ -2,6 +2,10 @@ function Student(firstName, lastName, grades = []) {
     this.firstName = firstName,
     this.lastName =  lastName,
     this.grades = grades
+    
+    function Student() {
+        
+    }
 }
 
 Student.prototype.inputNewGrade = function(grade) {
