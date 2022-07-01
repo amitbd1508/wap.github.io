@@ -25,9 +25,18 @@
       };
 
       askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
-      askPassword(function() {user.loginOk()}, function(){user.loginFail()});
-      askPassword(() => user.loginOk(), () => user.loginFail());
-    
+      askPassword(
+        function () {
+          user.loginOk();
+        },
+        function () {
+          user.loginFail();
+        }
+      );
+      askPassword(
+        () => user.loginOk(),
+        () => user.loginFail()
+      );
 
       //askPassword(user.loginOk, user.loginFail);
     </script>
