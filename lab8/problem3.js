@@ -15,3 +15,10 @@ Array.prototype.mySort = function () {
 
 
 console.log([4,2,7,2,8].mySort());
+
+
+
+
+
+
+console.log(f1, f2);
