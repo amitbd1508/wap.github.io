@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/app.css" type="text/css" />
+
+    <title>{{title}}</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/">Home Page</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/users">Users</a></li>
+    </ul>
+    
+    <h1>Products Page</h1>
+
+    <hr />
+
+    <fieldset>
+      <legend>List of Products</legend>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#products}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{number}}</td>
+            <td>{{description}}</td>
+          </tr>
+          {{/products}}
+        </tbody>
+      </table>
+    </fieldset>
+   
+    <fieldset>
+      <legend>Add New Product</legend>
+      <form action="products" method="post">
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" required />
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="number" required max="100" min="0" /><br>
+        <label for="description">Description:</label> 
+        <textarea name="description"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <title>{{title}}</title>
+</head>
+<body>
+
+    <ul>
+        <li><a href="/">Home Page</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/users">Users</a></li>
+    </ul>
+
+    <h1>Users Page</h1>
+
+    <hr />
+    <fieldset>
+        <legend>List of Users</legend>
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#users}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{phone}}</td>
+                <td>{{address}}</td>
+              </tr>
+              {{/users}}
+            </tbody>
+          </table>
+    </fieldset>
+    <fieldset>
+        <legend>Add New User</legend>
+        <form action="users" method="post">
+            <label for="name">User Name:</label>
+            <input type="text" name="name" required>
+            <label for="phone">Phone:</label>
+            <input name="phone" type="phone" required> <br>
+            <label for="address">Address:</label>
+            <textarea name="address"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+</body>
+</html>
