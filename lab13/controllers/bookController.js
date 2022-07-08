@@ -1,7 +1,7 @@
 const Book = require("../models/book");
 
-const get = (req, res, next) => {
-  res.status(200).json(Book.get());
+const getAll = (req, res, next) => {
+  res.status(200).json(Book.getAll());
 };
 const getById = (req, res, next) => {
   res.status(200).json(Book.getById(req.params.id));
@@ -29,4 +29,4 @@ const update = (req, res, next) => {
   );
   res.status(200).json(book.update());
 };
-module.exports = { get, getById, deleteById, save, update };
+module.exports = { getAll, getById, deleteById, save, update };

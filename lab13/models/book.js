@@ -51,7 +51,7 @@ class Book {
       throw new Error("Record Not Found");
     }
   }
-  static get() {
+  static getAll() {
     return books;
   }
 
