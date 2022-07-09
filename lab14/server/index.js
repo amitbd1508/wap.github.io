@@ -1,12 +1,9 @@
 const express = require("express");
-const cros = require("cros");
+const cors = require("cors");
 const bookRouter = require("./routes/book");
-
 const app = express();
-app.use(cros())
-app.listen(3000, () => {
-  console.log("Server running at port number 3000...");
-});
+
+app.use(cors())
 
 app.use(express.json());
 app.use("/book", bookRouter);
@@ -20,4 +17,8 @@ app.use((err, req, res, next) => {
   } else {
     res.status(500).json({ error: err.msg });
   }
+});
+
+app.listen(3000, () => {
+  console.log("Server running at port number 3000...");
 });
